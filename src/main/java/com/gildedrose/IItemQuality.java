@@ -1,8 +1,8 @@
 package com.gildedrose;
 
-public interface IQuality {
+public interface IItemQuality {
 
-    void updateItem(Item item);
+    void updateItem();
 
     void changeQuality(int value);
 

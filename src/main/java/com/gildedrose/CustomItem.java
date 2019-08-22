@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class CustomItem implements IQuality{
+public class CustomItem implements IItemQuality {
 
     private Item item;
 
@@ -10,7 +10,7 @@ public class CustomItem implements IQuality{
     }
 
     @Override
-    public void updateItem(Item item) {
+    public void updateItem() {
 
     }
 

@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class Sulfuras implements IQuality {
+public class Sulfuras implements IItemQuality {
 
     private Item item;
 
@@ -9,7 +9,7 @@ public class Sulfuras implements IQuality {
     }
 
     @Override
-    public void updateItem(Item item) {
+    public void updateItem() {
 
     }
 

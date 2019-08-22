@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class BackstagePasses implements IQuality{
+public class BackstagePasses implements IItemQuality {
 
     private Item item;
 
@@ -9,7 +9,7 @@ public class BackstagePasses implements IQuality{
     }
 
     @Override
-    public void updateItem(Item item) {
+    public void updateItem() {
 
     }
 
