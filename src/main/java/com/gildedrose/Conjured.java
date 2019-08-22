@@ -1,22 +1,22 @@
 package com.gildedrose;
 
-public class CustomItem implements IItemQuality {
+public class Conjured implements IItemQuality {
 
     private static final int MIN_QUALITY = 0;
     private static final int MIN_SELL_IN = 0;
-    private Item item;
+    Item item;
 
-    public CustomItem(Item item) {
+    public Conjured(Item item) {
         this.item = item;
     }
 
     @Override
     public void updateItem() {
         decreaseSellIn();
-        changeQuality(1);
+        changeQuality(2);
 
         if(item.sellIn < MIN_SELL_IN)
-            changeQuality(1);
+            changeQuality(2);
     }
 
     @Override

@@ -43,7 +43,7 @@ public class GildedRoseTest {
 
     @Test
     public void when_CustomItemSellInIsZero_Expect_QualityIsNotNegative() {
-        Item[] items = {new Item(CUSTOM_ITEM, 0, 1)};
+        Item[] items = {new Item(CUSTOM_ITEM, 0, 0)};
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.updateQuality();
 
@@ -93,6 +93,16 @@ public class GildedRoseTest {
         assertEquals(20, items[0].quality);
     }
 
+    @Test
+    public void when_SulfurasItemQualityIsZero_Expect_QualityAndSellInValuesAreSame() {
+        Item[] items = {new Item(SULFURAS, 0, 0)};
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+
+        assertEquals(0, items[0].sellIn);
+        assertEquals(0, items[0].quality);
+    }
+
     //-------------------------------------------BACKSTAGE PASSESS-----------------------------------------------------
     @Test
     public void when_BackstagePassesSellInIsMoreThenTen_Expect_QualityIncreasesOnce() {
@@ -127,6 +137,47 @@ public class GildedRoseTest {
     @Test
     public void when_BackstagePassesSellInIsZero_Expect_QualityIsZero() {
         Item[] items = {new Item(BACKSTAGE_PASSES, 0, 10)};
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+
+        assertEquals(-1, items[0].sellIn);
+        assertEquals(0, items[0].quality);
+    }
+
+    @Test
+    public void when_BackstagePassesQualityIsFifty_Expect_QualityIsFifty() {
+        Item[] items = {new Item(BACKSTAGE_PASSES, 1, 50)};
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+
+        assertEquals(0, items[0].sellIn);
+        assertEquals(50, items[0].quality);
+    }
+
+    //-------------------------------------------CONJURED ITEM---------------------------------------------------------
+    @Test
+    public void when_ConjuredItemSellInIsZero_Expect_QualityDegradesFourTimes() {
+        Item[] items = {new Item(CONJURED, 0, 20)};
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+
+        assertEquals(-1, items[0].sellIn);
+        assertEquals(16, items[0].quality);
+    }
+
+    @Test
+    public void when_ConjuredItemSellInIsNotZero_Expect_QualityDegradesTwice() {
+        Item[] items = {new Item(CONJURED, 2, 20)};
+        GildedRose gildedRose = new GildedRose(items);
+        gildedRose.updateQuality();
+
+        assertEquals(1, items[0].sellIn);
+        assertEquals(18, items[0].quality);
+    }
+
+    @Test
+    public void when_ConjuredItemSellInIsZero_Expect_QualityIsNotNegative() {
+        Item[] items = {new Item(CONJURED, 0, 0)};
         GildedRose gildedRose = new GildedRose(items);
         gildedRose.updateQuality();
 

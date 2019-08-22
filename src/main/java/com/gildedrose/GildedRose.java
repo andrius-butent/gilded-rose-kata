@@ -32,6 +32,9 @@ class GildedRose {
             case BACKSTAGE_PASSES:
                 return new BackstagePasses(item);
 
+            case CONJURED:
+                return new Conjured(item);
+
             default:
                 return new CustomItem(item);
         }

@@ -15,24 +15,20 @@ public class BackstagePasses implements IItemQuality {
         decreaseSellIn();
         changeQuality(1);
 
-        if (item.sellIn < 10) {
+        if (item.sellIn < 10)
             changeQuality(1);
-        }
 
-        if (item.sellIn < 5) {
+        if (item.sellIn < 5)
             changeQuality(1);
-        }
 
-        if (item.sellIn < MIN_SELL_IN) {
+        if (item.sellIn < MIN_SELL_IN)
             changeQuality(-item.quality);
-        }
     }
 
     @Override
     public void changeQuality(int value) {
-        if (item.quality < MAX_QUALITY) {
+        if (item.quality < MAX_QUALITY)
             item.quality += value;
-        }
     }
 
     @Override

@@ -5,7 +5,7 @@ public class TexttestFixture {
         System.out.println("OMGHAI!");
 
         Item[] items = new Item[] {
-                new Item("+5 Dexterity Vest", 3, 20), //
+                new Item("+5 Dexterity Vest", 3, 2), //
                 new Item("Aged Brie", 0, 48), //
                 new Item("Elixir of the Mongoose", 5, 7), //
                 new Item("Sulfuras, Hand of Ragnaros", 0, 80), //

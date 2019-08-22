@@ -21,9 +21,8 @@ public class AgeBrie implements IItemQuality {
 
     @Override
     public void changeQuality(int value) {
-        if (item.quality < MAX_QUALITY) {
+        if (item.quality < MAX_QUALITY)
             item.quality += value;
-        }
     }
 
     @Override
