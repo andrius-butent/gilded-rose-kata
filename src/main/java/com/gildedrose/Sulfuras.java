@@ -19,7 +19,7 @@ public class Sulfuras implements IItemQuality {
     }
 
     @Override
-    public void changeSellIn(int value) {
-
+    public void decreaseSellIn() {
+        item.sellIn--;
     }
 }

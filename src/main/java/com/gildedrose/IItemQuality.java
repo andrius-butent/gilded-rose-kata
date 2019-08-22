@@ -6,5 +6,5 @@ public interface IItemQuality {
 
     void changeQuality(int value);
 
-    void changeSellIn(int value);
+    void decreaseSellIn();
 }
