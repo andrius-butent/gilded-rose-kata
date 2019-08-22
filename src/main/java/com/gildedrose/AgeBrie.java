@@ -10,7 +10,7 @@ public class AgeBrie implements IItemQuality {
 
     @Override
     public void updateItem() {
-        
+
     }
 
     @Override

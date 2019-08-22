@@ -66,4 +66,21 @@ class GildedRose {
             }
         }
     }
+
+    private IItemQuality getItemByName(Item item) {
+
+        switch (item.name) {
+            case AGE_BRIE:
+                return new AgeBrie(item);
+
+            case SULFURAS:
+                return new Sulfuras(item);
+
+            case BACKSTAGE_PASSES:
+                return new BackstagePasses(item);
+
+            default:
+                return new CustomItem(item);
+        }
+    }
 }
